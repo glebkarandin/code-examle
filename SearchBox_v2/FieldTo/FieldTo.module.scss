@@ -1,0 +1,9 @@
+@use '../../../styles/styleguide' as sg;
+
+.FieldTo {
+  width: 25rem;
+
+  @include sg.tablet() {
+	width: initial;
+  }
+}

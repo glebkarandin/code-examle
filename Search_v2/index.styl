@@ -1,0 +1,292 @@
+@import "../../pages/Search/index.styl";
+
+.HotToursPage
+    centered-layout()
+    padding-bottom 5rem
+
+    &-clearfix_container
+        background: $new-bb-header-back;
+    &-breadcrumbs
+        &-container
+            max-width: 115.2rem;
+            margin: 0 auto;
+
+    &-filters
+        float left
+        width 29rem
+        +tablet()
+            display: flex
+            flex-direction: column
+            width: 100%
+
+        .hotel-filters
+            +tabletHigh()
+                display none
+                position fixed
+                animation-name fadeInUp
+                animation-duration .4s
+                top 0
+                background #f1f3f6
+                left 0
+                z-index 20
+                height calc(100vh - 60px)
+                overflow scroll
+                margin-top 60px
+                width 100%
+            &-show
+                display block
+            &-container
+                +tablet()
+                    padding 1rem
+            &-inner
+                +tabletHigh()
+                    background-color $white
+                    box-shadow 0 3px 2px 0 rgba(0, 0, 0, 0.15)
+                    border-radius 2px
+                    > div
+                        padding 20px 10px !important
+                        border-bottom 1px solid #e2ecf3 !important
+                        &:first-child
+                            //border-bottom none !important
+                            //padding-bottom: 0 !important
+            .Block-header
+                +tabletHigh()
+                    background-color $blueMobile
+                    padding: 15px 10px
+
+            .search-top-filters
+                +tabletHigh()
+                    padding: 15px 10px
+
+            .Block-body
+                padding 0
+                .Select
+                    width 100%
+                .search-result-count
+                    +tabletHigh()
+                        width 100%
+                        color $mobileDarkBlue
+                        font-size 17px
+                        font-family TUI-reg
+                .hotel-filter
+                    padding 1rem
+                    border-bottom 1px solid $x-light-gray
+                    position relative
+                    +tabletHigh()
+                        padding: 1rem 0
+                        border-bottom: 0
+                        .filter-control
+                            padding-top 1.5rem
+                    &__theme-grey
+                        .name-searcher
+                            +tabletHigh()
+                                border none
+                                border-radius 2px
+                                color #8898b0
+                                font-family TUI-reg
+                                background url('~/images-new/svg-icons/icon-search-m.svg') #f8f9fa no-repeat 10px center
+                    &:last-child
+                        border-bottom none
+
+                    .filter-label
+                        height 2.2rem
+                        font-size $font-size-large
+                        margin-bottom 1.5rem
+                        +tabletHigh()
+                            color $mobileDarkBlue
+                            font-size 20px
+                            font-family TUI-reg
+                            font-weight bold
+                            margin-bottom 0
+
+
+                    .reset-bottom-margin
+                            margin-bottom 0
+
+                    .filter-control
+
+                        .HotelCategory-item
+                            display flex
+                            align-items center
+                            height 100%
+
+                .reset-hotel-filters
+                    background $white
+                    margin-top -0.1rem
+                    padding 0 1rem 1rem
+                    +tabletHigh()
+                        border-top 1px solid #e2ecf3
+                        text-align left
+
+                    .Button
+                        background-color $x-dark-blue
+                        width 100%
+                        text-transform initial
+                        +tablet()
+                            position relative
+                            background-color transparent
+                            color #73ccf2
+                            font-size 15px
+                            padding 0
+                            text-align left
+                            &:after
+                                content ''
+                                position absolute
+                                background-image url('~/images-new/svg-icons/icon-close-round-light.svg')
+                                background-repeat no-repeat
+                                width 20px
+                                height 20px
+                                top 15px
+                                right 0
+
+        &__header
+            display flex
+            justify-content space-between
+
+        &__back
+            width 25px
+            height 25px
+            background-image url('~/images-new/svg/arrow-left-white.svg')
+            background-repeat no-repeat
+            background-position center
+        &__left
+            display flex
+            align-items center
+        &__title
+            font-size 17px
+            color $white
+            text-transform none
+            font-family TUI-reg
+            font-weight bold
+        &__clear
+            padding 6px 35px 6px 10px
+            font-size 13px
+            color $white
+            display flex
+            justify-content center
+            align-items center
+            border: 1px solid $white
+            border-radius: 2px
+            position: relative
+            &:before
+                content ''
+                position absolute
+                top 5px
+                right 11px
+                background-size: cover
+                background-image url('~/images-new/svg-icons/icon-reset-w.svg')
+                width 15px
+                height 15px
+                background-repeat no-repeat
+
+    &-content
+        padding-left 6rem
+        overflow hidden
+        +tabletHigh()
+            padding-left: 0
+        +tablet()
+            padding-left 1rem
+            padding-right 1rem
+
+        .content-breadcrumbs
+            padding-bottom 1rem
+
+        .content-about
+            padding-bottom 3rem
+
+        .content-results
+
+            .error-holder
+                margin 3rem auto
+                text-align center
+                width 100%
+
+            .search-top-filters
+                display flex
+                flex-flow column nowrap
+                padding-bottom 4rem
+                +tablet()
+                    padding-bottom 15px
+
+                .search-result-count
+                    width 70%
+                    display flex
+                    padding-top 1.3rem
+                    font-family TUI-reg
+                    align-content center
+                    +tablet()
+                        padding-top 5px
+                        color #0c2c5c
+                        width 100%
+
+                .sort-filter,
+                .perpage-filter
+                    width 30%
+                    white-space nowrap
+                    display flex
+                    align-items center
+                    +tablet()
+                        flex-direction: column
+
+                .sort-filter
+                    width 70%
+
+                .filter-label
+                    padding-right 1rem
+
+                .filter-control
+                    display flex
+
+
+@keyframes fadeInUp
+    from
+        opacity 0
+        transform translate3d(0, 100%, 0)
+
+    to
+        opacity 1
+        transform translate3d(0, 0, 0)
+
+.HotToursPage__mobile-filters
+    position fixed
+    bottom 5px
+    left 0
+    padding 0 5px
+    display flex
+    justify-content space-between
+    align-items center
+    width 100%
+    z-index: 0
+    .btn__mobile
+        &:before
+            content ''
+            position absolute
+            top 8px
+            left 20px
+            width 25px
+            height 25px
+            background-repeat: no-repeat
+            background-image url('~/images-new/svg-icons/icon_location-m.svg')
+        &:first-child
+            margin-right: 5px
+            &:before
+                background-image url('~/images-new/svg-icons/icon_filter-m.svg')
+
+
+
+.btn__mobile
+    min-width 100%
+    position relative
+    background-color $blueMobile
+    color $white
+    font-family TUI-reg
+    font-weight bold
+    font-size 17px
+    box-shadow 0 12px 12px 0 rgba(0, 0, 0, 0.3)
+    border-radius 2px
+    height 40px
+
+//disable background scrolling in popups
+.overflow {
+    overflow: hidden
+}

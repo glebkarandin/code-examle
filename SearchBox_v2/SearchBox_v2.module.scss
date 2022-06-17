@@ -1,0 +1,20 @@
+@use '../../styles/styleguide' as sg;
+
+.SearchBoxV2 {
+  width: sg.$layout-width;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+
+  @include sg.tablet() {
+	padding: 20px 20px 0;
+	>div, >button {
+	  margin-bottom: 5px;
+	}
+  }
+
+  @include sg.tablet() {
+	width: 100%;
+	flex-direction: column;
+  }
+}

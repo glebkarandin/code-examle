@@ -1,0 +1,119 @@
+.tuiDatePicker
+	border: 0;
+	+tablet()
+		min-width: 100%
+
+	.react-datepicker__navigation
+		top: 0;
+		text-indent 0
+		border 1px solid #dcdcdc!important
+		border-radius 1.7rem
+		width 3.5rem
+		height 3.5rem
+		color: white
+
+		&--next
+			right: 20px;
+
+		&--next,
+		&--previous
+			&:before
+				position: relative;
+				color $sg-2019_light-gray !important
+				font-size 15px
+
+		&--next
+			&:before
+				content: url("~/images-new/svg-icons/icon-arrow-right-gray.svg");
+				top: 4px;
+				left: 1px;
+
+		&--previous
+			&:before
+				content: url("~/images-new/svg-icons/icon-arrow-left-gray.svg");
+				top: 8px;
+				left: -1px;
+
+	.react-datepicker__month-container
+		border: 0;
+		+tablet()
+			min-width: 100%
+
+	.react-datepicker__month
+		border none
+
+		&-container
+			margin-right 0
+
+		.react-datepicker__current-month
+			font-weight normal
+			font-size 2rem
+			color $mobileDarkBlue
+			font-family TUI-regular, sans-serif !important
+
+		.react-datepicker__day
+			font-weight 300
+			background none
+			border none
+			color $mobileDarkBlue
+
+			&:hover
+				background-image url('/images-new/svg/circle-border.svg')
+				background-size 100% 100%
+				background-position center
+
+			&--today
+				background-image url(/images-new/svg/dot-fill.svg)
+				background-position center 30px
+				background-repeat no-repeat
+				transition none
+
+
+			&--disabled
+				color $sg-2019_light-gray
+
+				&:hover
+					background-image none
+
+			&--selected
+				background-image: url(/images-new/svg-icons/circle-bg-fill.svg);
+				background-size: contain!important;
+				background-position: center, 20px!important;
+				background-repeat: no-repeat, no-repeat!important;
+				background-color: transparent!important;
+
+			&-name
+				width 4rem
+				height 3rem
+				font-size 1.7rem
+
+			&--highlighted
+				background-color $sg-2019_background4
+
+
+
+
+		&__specialDay
+			background-image: url(/images-new/svg-icons/circle-bg-fill.svg), url(/images-new/svg/half-square-fill.svg)!important;
+			background-size: 100% 100%, 50% 100%!important;
+			background-position: center, -1px!important;
+			background-repeat: no-repeat, no-repeat!important;
+			background-color: transparent!important;
+
+		&__header
+			background-color $mobileDarkBlue
+
+		&__footer
+			&__button
+				background-color $sg-2019_green_button
+				border-radius $sg-2019_radius
+				color $mobileDarkBlue
+				box-shadow 0 1px 0 0 #8aae00
+				display block
+				margin 10px
+				border none
+				font-size 17px
+
+				&:hover
+					background-color $sg-2019_green_button
+					color $mobileDarkBlue
